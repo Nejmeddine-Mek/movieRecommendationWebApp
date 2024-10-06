@@ -9,7 +9,6 @@ body{
 }
 
 nav{
-    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,14 +46,37 @@ nav ul{
     list-style-type: none;
     display: flex;
 }
+
 nav ul li a ,.option a:visited, .option a:active {
     text-decoration:  none;
+    letter-spacing: 1.5px;
+    font-size: 18px;
     color: white;
+    padding: 0 10px;
+    transition: all ease-in-out .5s;
 }
 nav ul li{
-    margin: 15px 20px;
+    margin: 15px 30px;
+    position: relative;
 }
 
+nav ul li a::after {
+    content: ''; /* Necessary to create the pseudo-element */
+    position: absolute;
+    width: 0; /* Start with no visible circle */
+    height: 0; /* Start with no visible circle */
+    background-color: white; /* Adjust the color as needed */
+    border-radius: 50%; /* Makes the element a circle */
+    bottom: -12px; /* Position below the menu item */
+    left: 50%; /* Centers the circle */
+    transform: translateX(-50%); /* Centers the circle correctly */
+    transition: all 0.3s ease-in-out; /* Smooth transition effect */
+}
+
+nav ul li a:hover::after, nav ul li a:focus::after, nav ul li a:active::after {
+    width: 8px; /* Circle becomes visible */
+    height: 8px; /* Circle becomes visible */
+}
 
 .container{
     display: inline-flex;
