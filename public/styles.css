@@ -19,7 +19,7 @@ nav{
 .logo{
     display: inline-flex;
     position: absolute;
-    left: 3%;
+    left: 8%;
     top: 2%;
 }
 .logo #logo{
@@ -45,6 +45,7 @@ nav ul{
     text-decoration: none;
     list-style-type: none;
     display: flex;
+    margin-right: 6%;
 }
 
 nav ul li a ,.option a:visited, .option a:active {
@@ -125,3 +126,11 @@ nav ul li a:hover::after, nav ul li a:focus::after, nav ul li a:active::after {
     height: auto; /* Maintain the aspect ratio */
     display: block; /* Prevent bottom space */
 }
+
+.rc{
+margin-top: 70px;
+margin-left: 90px; 
+font-size: 1.4rem;
+font-family: "Poppins";
+font-weight:200;
+color: aliceblue;}
