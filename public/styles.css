@@ -106,18 +106,17 @@ nav ul li a:hover::after, nav ul li a:focus::after, nav ul li a:active::after {
 }
 .slides{
     display: flex;
-<<<<<<< Updated upstream
-=======
-    flex-direction: column;
->>>>>>> Stashed changes
     align-items: center;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 100px
+    ;
 }
 .slide{
     width: 181px;
     height: 234px;
     border-radius: 28px;
     background-color: azure;
-<<<<<<< Updated upstream
     position: relative; /* Allow absolute positioning of children */
     overflow: hidden; /* Hide overflow if needed */
 }
@@ -125,6 +124,4 @@ nav ul li a:hover::after, nav ul li a:focus::after, nav ul li a:active::after {
     width: 100%; /* Make the image responsive */
     height: auto; /* Maintain the aspect ratio */
     display: block; /* Prevent bottom space */
-=======
->>>>>>> Stashed changes
 }

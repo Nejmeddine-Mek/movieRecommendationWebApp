@@ -53,7 +53,9 @@
 
           if (data.Response === "True") {
               // Loop through the movies and display them
-              data.Search.forEach(movie => {
+              const data1 = data.Search.slice(1,1 + totalMovies);
+              console.log(data1);
+              data1.forEach(movie => {
                   const movieDiv = document.createElement('div');
                   movieDiv.classList.add('slide');
                   // Create image element
