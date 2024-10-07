@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/clapboard.png" type="image/icon type">
+    <link rel="stylesheet" href="styles.css">
+    <title>Rate Clap</title>
+</head>
+<body>
+    <h1>welcome</h1>
+    <script>
+            const data = JSON.parse(localStorage.getItem('movieData'));
+            if(data){
+                const elt = document.createElement("img");
+                elt.src = data.Poster;
+                document.body.append(elt);
+            }
+            
+
+    </script>
+</body>
+</html>

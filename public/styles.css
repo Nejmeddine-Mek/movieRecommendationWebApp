@@ -109,8 +109,7 @@ nav ul li a:hover::after, nav ul li a:focus::after, nav ul li a:active::after {
     align-items: center;
     justify-content: space-between;
     padding-left: 30px;
-    padding-right: 100px
-    ;
+    padding-right: 100px;
 }
 .slide{
     width: 181px;
@@ -119,6 +118,7 @@ nav ul li a:hover::after, nav ul li a:focus::after, nav ul li a:active::after {
     background-color: azure;
     position: relative; /* Allow absolute positioning of children */
     overflow: hidden; /* Hide overflow if needed */
+    transition: all ease-in-out .5s;
 }
 .slide img {
     width: 100%; /* Make the image responsive */

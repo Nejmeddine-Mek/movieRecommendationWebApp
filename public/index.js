@@ -13,10 +13,9 @@ srchBtn.addEventListener('click', async (event) => {
             })
             //we should first check if the response is okay!
             const data = await res.json();  //we parse the response
-            console.log(data)
-            const pic = document.createElement("img"); //we add an image #just a test
-            pic.src= data.Poster;
-            document.body.append(pic);
+            localStorage.setItem('movieData', JSON.stringify(data));
+            window.location.href = "/movieRev";
+
              }  
              else{
                 window.alert("enter a search query");
