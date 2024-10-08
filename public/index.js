@@ -8,7 +8,7 @@ srchBtn.addEventListener('click', async (event) => {
     try{
         if(searchInput.value != ""){  // we execute this portion if the input is not empty
             // we search for data basically
-            const res = await fetch(`http://localhost:5500/search?query=${searchInput.value}`, {
+            const res = await fetch(`http://localhost:3000/search?query=${searchInput.value}`, {
              method : "GET"
             })
             //we should first check if the response is okay!

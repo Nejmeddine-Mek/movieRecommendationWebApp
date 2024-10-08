@@ -12,51 +12,55 @@
 
 
     <script>
+        // in this section, we will be displaying the data we fetchde on the interface
             const data = JSON.parse(localStorage.getItem('movieData'));
-        
+              
+            //if we get a positive response, we will do the following
             if(data.Response === "True"){
                 console.log(data)
-
+                // we firstly insert the poster
                 const poster = create('img');
                 poster.classList.add('poster');
                 poster.src = data.Poster;
                 document.body.append(poster);
 
-                const div = create('div');
+                const div = create('div');  //we add a div right next to it
                 div.classList.add('header');
 
-                const title = create('h1');
+                const title = create('h1'); //h1 element containing the title of the movie
                 title.classList.add('title');
                 title.textContent = data.Title;
 
-                const actors = create('h3');
+                const actors = create('h3'); // here the names of the main actors
                 actors.classList.add('actors');
                 actors.textContent = `Actors: ${data.Actors}`;
                 
-                const genre = create('p');
+                const genre = create('p'); // the genre of the movie
                 genre.classList.add('type');
                 genre.textContent = `Genre: ${data.Genre}`;
                  
-                const rating = create('p');
+                const rating = create('p'); // here the rating of the movie
                 rating.textContent = `IMDB rating: ${data.imdbRating}/10`;
                 rating.classList.add('rating');
                 
-                const release = create('p');
+                const release = create('p'); // here the realse date of the movie
                 release.textContent = `Released: ${data.Released}`;
                 release.classList.add('rating');
 
-                const length = create('p');
+                const length = create('p'); // here the length of the movie
                 length.classList.add('rating');
                 length.textContent = `Runtime: ${data.Runtime}`;
 
-                const lang = create('p');
+                const lang = create('p'); // here the language(s) of the movie
                 lang.textContent = `Language: ${data.Language}`;
                 lang.classList.add('rating');
 
-                const country = create('p');
+                const country = create('p'); // the coutry(s)
                 country.classList.add('rating');
                 country.textContent = `Country: ${data.Country}`;
 
+
+                // here we append all the previous elements to that div
                 div.appendChild(title);
                 div.appendChild(actors);
                 div.appendChild(genre);
@@ -66,32 +70,37 @@
                 div.appendChild(lang);
                 div.appendChild(country);
 
-
+                //we create another div to contain some extra info
                 document.body.append(div);
 
                 const PlotAndOther = create('div');
                 PlotAndOther.classList.add('plotAndOther');
 
+                // here we add the plot of the movie
                 const Plot = create('p');
                 Plot.classList.add('plot');
                 Plot.innerHTML = `<b>Plot</b>:<br>&nbsp&nbsp ${data.Plot}`;
 
+                //here the writers of the movie
                 const writers = create('p');
                 writers.classList.add('plot');
                 writers.innerHTML = `<b>Writer</b>: <br> &nbsp&nbsp ${data.Writer}`;
            
-                  
+                // here the award(s) the movie has gotten
                 const award = create('p');
                 award.classList.add('plot');
                 award.innerHTML = `<b>Awards</b>:<br> &nbsp&nbsp ${data.Awards}`;
+                // we append everything to the div
                 PlotAndOther.appendChild(Plot);
                 PlotAndOther.appendChild(writers);
                 PlotAndOther.appendChild(award);
-
+                
+                //we append the div itself to the body
                 document.body.append(PlotAndOther);
                        }
                        else{
-                        window.alert('something went wrong')
+                         window.location.href = "/notFound";
+                        // in the other case if we get a negative response, we do what follows
                        }
        
                        // I want to avoid writing document.creteElement() every time I create a new element

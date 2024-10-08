@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const PORT = 5500;
+const PORT = 3000;
 const apiKey = `18ca1b4a`; // API key
 const API = `http://www.omdbapi.com/?&apikey=${apiKey}`; // API
 
@@ -33,5 +33,6 @@ app.get('/search',async (req,res) => {
 app.get('/movieRev' ,(req,res) =>{
     res.sendFile(path.join(__dirname,'public', 'movieRev.html'));
 })
+
 //we just host our page on port 3000
 app.listen(PORT, () => console.log("connected to port "+ PORT));

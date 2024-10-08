@@ -79,3 +79,8 @@ body{
     line-height: 25px;
     margin-bottom: 30px;
 }
+.notFound{
+    font-size: 5rem;
+    align-self: center;
+    color: rgba(255, 0, 0, 0.775);
+}
