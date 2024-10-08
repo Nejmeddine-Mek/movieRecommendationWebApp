@@ -4,20 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./images/clapboard.png" type="image/icon type">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="movRevStyles.css">
     <title>Rate Clap</title>
 </head>
 <body>
-    <h1>welcome</h1>
+
+
+
     <script>
             const data = JSON.parse(localStorage.getItem('movieData'));
-            if(data){
-                const elt = document.createElement("img");
-                elt.src = data.Poster;
-                document.body.append(elt);
-            }
-            
+        
+            if(data.Response === "True"){
+                console.log(data)
 
+                const poster = create('img');
+                poster.classList.add('poster');
+                poster.src = data.Poster;
+                document.body.append(poster);
+
+                const div = create('div');
+                div.classList.add('header');
+
+                const title = create('h1');
+                title.classList.add('title');
+                title.textContent = data.Title;
+
+                const actors = create('h3');
+                actors.classList.add('actors');
+                actors.textContent = `Actors: ${data.Actors}`;
+                
+                const genre = create('p');
+                genre.classList.add('type');
+                genre.textContent = `Genre: ${data.Genre}`;
+                 
+                const rating = create('p');
+                rating.textContent = `IMDB rating: ${data.imdbRating}/10`;
+                rating.classList.add('rating');
+                
+                const release = create('p');
+                release.textContent = `Released: ${data.Released}`;
+                release.classList.add('rating');
+
+                const length = create('p');
+                length.classList.add('rating');
+                length.textContent = `Runtime: ${data.Runtime}`;
+
+                const lang = create('p');
+                lang.textContent = `Language: ${data.Language}`;
+                lang.classList.add('rating');
+
+                const country = create('p');
+                country.classList.add('rating');
+                country.textContent = `Country: ${data.Country}`;
+
+                div.appendChild(title);
+                div.appendChild(actors);
+                div.appendChild(genre);
+                div.appendChild(rating);
+                div.appendChild(release);
+                div.appendChild(length);
+                div.appendChild(lang);
+                div.appendChild(country);
+
+
+                document.body.append(div);
+
+                const PlotAndOther = create('div');
+                PlotAndOther.classList.add('plotAndOther');
+
+                const Plot = create('p');
+                Plot.classList.add('plot');
+                Plot.innerHTML = `<b>Plot</b>:<br>&nbsp ${data.Plot}`;
+
+                PlotAndOther.appendChild(Plot);
+                document.body.append(PlotAndOther);
+                       }
+                       else{
+                        window.alert('something went wrong')
+                       }
+       
+                       // I want to avoid writing document.creteElement() every time I create a new element
+    function create(param){
+        return document.createElement(param);
+    }
+    //---------------------------------------------------------------------------------------------------
+    
     </script>
 </body>
 </html>
