@@ -72,8 +72,10 @@ body{
     border: 2px solid white;
     border-radius: 5px;
     padding: 10px 20px;
+    margin-bottom: 50px;
 }
 .plot{
     text-indent: 5px;
     line-height: 25px;
+    margin-bottom: 30px;
 }

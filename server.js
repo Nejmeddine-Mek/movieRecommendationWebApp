@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const PORT = 3000;
+const PORT = 5500;
 const apiKey = `18ca1b4a`; // API key
 const API = `http://www.omdbapi.com/?&apikey=${apiKey}`; // API
 

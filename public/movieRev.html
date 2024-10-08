@@ -74,9 +74,20 @@
 
                 const Plot = create('p');
                 Plot.classList.add('plot');
-                Plot.innerHTML = `<b>Plot</b>:<br>&nbsp ${data.Plot}`;
+                Plot.innerHTML = `<b>Plot</b>:<br>&nbsp&nbsp ${data.Plot}`;
 
+                const writers = create('p');
+                writers.classList.add('plot');
+                writers.innerHTML = `<b>Writer</b>: <br> &nbsp&nbsp ${data.Writer}`;
+           
+                  
+                const award = create('p');
+                award.classList.add('plot');
+                award.innerHTML = `<b>Awards</b>:<br> &nbsp&nbsp ${data.Awards}`;
                 PlotAndOther.appendChild(Plot);
+                PlotAndOther.appendChild(writers);
+                PlotAndOther.appendChild(award);
+
                 document.body.append(PlotAndOther);
                        }
                        else{

@@ -85,12 +85,14 @@ nav ul li a:hover::after, nav ul li a:focus::after, nav ul li a:active::after {
     right: 5%;
 }
 .container button{
+    outline: none;
     background: transparent;
     border: none;
     height: 30px;
     width: 30px;
 }
 .container button img{
+    cursor: pointer;
     position: absolute;
     top: 25%;
     right: 17%;
@@ -104,6 +106,7 @@ nav ul li a:hover::after, nav ul li a:focus::after, nav ul li a:active::after {
     border: none;
     outline: none;
     border-radius: 50px;
+    overflow: hidden;
 }
 .slides{
     display: flex;

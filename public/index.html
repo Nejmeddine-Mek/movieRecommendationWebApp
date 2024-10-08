@@ -37,14 +37,15 @@
 <script>
   const slides= document.querySelector(".slides");
   const apiKey = '18ca1b4a'; // Your API key
-  const year = 2023; // Year to filter movies by
+  const date = new Date();
+  const year = date.getFullYear() || 2023; // Year to filter movies by
   const totalMovies = 6; // Number of movies to fetch
   const moviesContainer = document.getElementById('slides'); // Container for displaying movies
-
+  
   // Function to fetch movies based on year
   async function fetchMoviesByYear(year) {
       // Construct the API URL for fetching movies by year
-      const API_URL = `http://www.omdbapi.com/?s=movie&y=${year}&apikey=${apiKey}&page=1`; // Note: Only one page is fetched initially
+      const API_URL = `http://www.omdbapi.com/?s=movie&y=${year}&apikey=${apiKey}&page=${Math.floor(Math.random() * 3) + 1}`; // Note: Only one page is fetched initially
 
       try {
         
@@ -52,8 +53,9 @@
           const data = await response.json();
 
           if (data.Response === "True") {
+            console.log(data);
               // Loop through the movies and display them
-              const data1 = data.Search.slice(1,1 + totalMovies);
+              const data1 = data.Search.slice(5,5 + totalMovies);
               console.log(data1);
               data1.forEach(movie => {
                   const movieDiv = document.createElement('div');
